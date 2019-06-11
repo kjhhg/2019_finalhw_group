@@ -6,10 +6,10 @@
     </label>
     <div id="myNav" :class="`overlay ${myNav}`">
       <div class="overlay-content">
-        <a href="#">Social</a>
-        <a href="#">Entertainment</a>
-        <a href="#">Sport</a>
-        <a href="#">Taiwan</a>
+        <a href="#">首頁</a>
+        <a href="#">商品總覽</a>
+        <a href="#">購買須知</a>
+        <a href="#">聯絡我們</a>
       </div>
     </div>
   </nav>
@@ -110,6 +110,7 @@ export default {
 }
 
 .overlay-content {
+  font-family: '微軟正黑體';
   position: relative;
   top: 25%;
   width: 100%;

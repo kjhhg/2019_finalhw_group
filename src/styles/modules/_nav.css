@@ -2,9 +2,12 @@
    /* background-color: $color-primary; */
    display: grid;
    grid-template-columns: [full-start] minmax(3rem, 1fr) [center-start] repeat(8, [col-start] 1fr [col-end]) [center-end] minmax(3rem, 1fr) [full-end];
-   grid-column: full-start / full-end;   
+   grid-column: full-start / full-end;  
+   grid-row: nav-start / nav-end; 
    color: $color-white;
-   
+   z-index: 1000;
+   align-items: center;
+   justify-content: center;
    /* display: flex;
    align-items: center;
    justify-content: flex-end; */
@@ -13,8 +16,15 @@
       display: none;
    }
 
+   &__logo{
+      grid-column: 2 / 3;
+      height: 5rem;
+      margin-top: 2rem;
+      position: relative;
+   }
+
    &__btn {
-      grid-column: center-end / full-end;
+      grid-column: -3 / -2;
       position: relative;
       z-index: 1000;
    }
@@ -23,9 +33,9 @@
       border: none;
       border-radius: 3px;
       background-color: $color-pink;
-      diplay: flex;
-      align-items: center;
-      justify-content: center;
+      display: grid;
+      align-self: center;
+      justify-self: end;
       height: .15rem;
       width: 2.5rem;
       margin-top: 1rem;
@@ -63,12 +73,7 @@
       border: none;
       border-radius: 3px;
       background-color: $color-white;
-      diplay: flex;
-      align-items: center;
-      justify-content: center;
-      height: .15rem;
-      width: 2.5rem;
-      margin-top: 1rem;
+
 
       &::before{
          background-color: $color-white;

@@ -1,22 +1,21 @@
 <template>
   <header class="gallery">
-    <figure 
-      v-for="index in 16" 
-      :key="index" 
-      :class="`gallery__item gallery__item--${index}`"
-    >
       <img
-        :src="totalNews[index-1].urlToImage"
-        :alt="`Gallery image ${index}`"
+        src="../img/baked-goods-cake-close-up-998237.jpg"
         class="gallery__img"
       >
-    </figure>
+      
   </header>
 </template>
 
 <script>
+// import Nav from "./Nav";
+
 export default {
   name: "Gallery",
+  // components:{
+  //   Nav
+  // },
   props: ["totalNews"]
 };
 </script>

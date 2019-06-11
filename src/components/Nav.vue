@@ -1,11 +1,13 @@
 <template>
   <nav class="nav">
+    <img src="../img/sweet_time.png" class="nav__logo" alt="">
     <input @click="onCheck" type="checkbox" class="nav__checkbox" id="nav-toggle">
     <label for="nav-toggle" class="nav__btn">
       <button :class="`${navIconClr}`"></button>
     </label>
     <div id="myNav" :class="`overlay ${myNav}`">
       <div class="overlay-content">
+        <img src="../img/sweet_time.png" class="overlay_img">
         <a href="#">首頁</a>
         <a href="#">商品總覽</a>
         <a href="#">購買須知</a>
@@ -138,6 +140,12 @@ export default {
   top: 20px;
   right: 45px;
   font-size: 60px;
+}
+
+.overlay_img{
+    height: 5rem;
+    margin-top: -10rem;
+    margin-bottom: 2rem;
 }
 
 .overlay-width {

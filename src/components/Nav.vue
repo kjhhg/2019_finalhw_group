@@ -14,10 +14,29 @@
         <a href="#">聯絡我們</a>
       </div>
     </div>
+    <ul>
+        <router-link to="/login" tag="li" v-if="!isLoggedIn" class="nav-item" active-class="active">
+          <a class="nav-link">Login</a>
+        </router-link>
+        <li v-if="isLoggedIn" class="li-pointer nav-item">
+          <a @click="logout" class="nav-link">Logout {{ userEmail }}</a>
+        </li>
+        <router-link to="/register" tag="li" v-if="!isLoggedIn" class="nav-item" active-class="active">
+          <a class="nav-link">Register</a>
+        </router-link>
+        <li>
+          <router-link to="/cart" class="btn btn-success navbar-btn" tag="button">
+            Checkout <span class="badge badge-light">{{ numItems }} ($ {{ cartValue }})</span>
+          </router-link>
+        </li>
+    </ul>
   </nav>
 </template>
 
 <script>
+import {
+  mapActions, mapGetters
+} from 'vuex';
 export default {
   name: "Nav",
   data() {
@@ -28,7 +47,23 @@ export default {
       navIconClr:"nav__icon"
     };
   },
+  computed: {
+    ...mapGetters(['isLoggedIn', 'cartValue', 'currentUser', 'cartItemList']),
+    numItems() {
+      return this.cartItemList.reduce((total, item) => {
+        total += item.quantity;
+        return total
+      }, 0);
+    },
+    userEmail() {
+      return this.isLoggedIn ? this.currentUser.email : ''
+    }
+  },
   methods: {
+    ...mapActions(['logout']),
+    toggleNavbar() {
+      this.isNavOpen = !this.isNavOpen
+    },
     onResize() {
       if (window.innerWidth > 1000) {
         this.size = "sm";

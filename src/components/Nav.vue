@@ -25,12 +25,16 @@
         <router-link to="/register" tag="li" v-if="!isLoggedIn" class="nav-item" active-class="active">
           <a class="nav-link">Register</a>
         </router-link>
-        
+        <div class="text-center mt-4">
+          <button @click="loginWithGoogle" v-if="!isLoggedIn" class="nav-link">Login with Google</button>
+        </div>
     </ul>
   </nav>
 </template>
 
 <script>
+import firebase from 'firebase';
+import router from "../router";
 import {
   mapActions, mapGetters
 } from 'vuex';
@@ -41,7 +45,10 @@ export default {
       checked: false,
       size: "lg",
       myNav: "hide-sm",
-      navIconClr:"nav__icon"
+      navIconClr:"nav__icon",
+      errors: [],
+      loading: false,
+      user: ""
     };
   },
   computed: {
@@ -91,6 +98,24 @@ export default {
 
     onRoute() {
       this.checked = !this.checked;
+    },
+
+    async loginWithGoogle() {
+      // loading set to true
+      this.loading = true;
+      // clear old errors
+      this.errors = [];
+      try {
+        let response = await firebase
+          .auth()
+          .signInWithPopup(new firebase.auth.GoogleAuthProvider());
+        this.user = response.user;
+        router.push("/");
+      } catch (error) {
+        this.errors.push(error.message);
+        // set loading to false
+        this.loading = false;
+      }
     }
   },
 
@@ -104,6 +129,7 @@ export default {
       this.myNav = "hide-sm";
     // }
   }
+  
 };
 </script>
 

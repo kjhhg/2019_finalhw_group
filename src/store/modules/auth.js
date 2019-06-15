@@ -3,6 +3,7 @@ import { firebaseAuth } from '../../config/firebaseConfig';
 const state = {
 	isLoggedIn: firebaseAuth().currentUser != null,
 	user: firebaseAuth().currentUser,
+	//provider: new firebaseAuth().GoogleAuthProvider()
 }
 
 const mutations = {

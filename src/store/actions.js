@@ -1,5 +1,6 @@
 import { ref, firebaseAuth } from '../config/firebaseConfig';
 
+
 export const updateCart = ({
   commit
 }, {item, quantity, isAdd}) => {
@@ -28,6 +29,8 @@ export const logout = ({commit}) => {
   return firebaseAuth().signOut();
 }
 
+
+
 export function loginWithEmail (_, {email, password}) {
   return firebaseAuth().signInWithEmailAndPassword(email, password);
 }
@@ -36,6 +39,10 @@ export function listenToProductList({commit}) {
 	return ref.child("products").on('value', (products) => {
 		commit('UPDATE_PRODUCT_LIST', products.val());
 	});
+}
+
+export function loginWithGoogle (_, provider) {
+	return firebaseAuth().signInWithPopup(provider);
 }
 
 export function getShoppingCart({commit}, {uid, currentCart}) {

@@ -1,5 +1,6 @@
 import 'bootstrap'; 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./firebase";
 
 import Vue from 'vue';
 import App from './App';

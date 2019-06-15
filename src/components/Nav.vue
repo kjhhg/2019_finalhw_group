@@ -14,10 +14,28 @@
         <a href="#">聯絡我們</a>
       </div>
     </div>
+    
+    <ul>
+        <router-link to="/login" tag="li" v-if="!isLoggedIn" class="nav-item" active-class="active">
+          <a class="nav-link">Login</a>
+        </router-link>
+        <li v-if="isLoggedIn" class="li-pointer nav-item">
+          <a @click="logout" class="nav-link">Logout {{ userEmail }}</a>
+        </li>
+        <router-link to="/register" tag="li" v-if="!isLoggedIn" class="nav-item" active-class="active">
+          <a class="nav-link">Register</a>
+        </router-link>
+        <div class="text-center mt-4">
+          <button @click="loginWithGoogle" v-if="!isLoggedIn" class="nav-link">Login with Google</button>
+        </div>
+    </ul>
   </nav>
 </template>
 
 <script>
+import {
+  mapActions, mapGetters
+} from 'vuex';
 export default {
   name: "Nav",
   data() {
@@ -28,7 +46,23 @@ export default {
       navIconClr:"nav__icon"
     };
   },
+  computed: {
+    ...mapGetters(['isLoggedIn', 'cartValue', 'currentUser', 'cartItemList']),
+    numItems() {
+      return this.cartItemList.reduce((total, item) => {
+        total += item.quantity;
+        return total
+      }, 0);
+    },
+    userEmail() {
+      return this.isLoggedIn ? this.currentUser.email : ''
+    }
+  },
   methods: {
+    ...mapActions(['logout','loginWithGoogle']),
+    toggleNavbar() {
+      this.isNavOpen = !this.isNavOpen
+    },
     onResize() {
       if (window.innerWidth > 1000) {
         this.size = "sm";
@@ -59,7 +93,9 @@ export default {
 
     onRoute() {
       this.checked = !this.checked;
-    }
+    },
+
+    
   },
 
   created() {
@@ -72,6 +108,7 @@ export default {
       this.myNav = "hide-sm";
     // }
   }
+  
 };
 </script>
 

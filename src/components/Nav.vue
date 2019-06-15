@@ -33,8 +33,6 @@
 </template>
 
 <script>
-import firebase from 'firebase';
-import router from "../router";
 import {
   mapActions, mapGetters
 } from 'vuex';
@@ -45,10 +43,7 @@ export default {
       checked: false,
       size: "lg",
       myNav: "hide-sm",
-      navIconClr:"nav__icon",
-      errors: [],
-      loading: false,
-      user: ""
+      navIconClr:"nav__icon"
     };
   },
   computed: {
@@ -64,7 +59,7 @@ export default {
     }
   },
   methods: {
-    ...mapActions(['logout']),
+    ...mapActions(['logout','loginWithGoogle']),
     toggleNavbar() {
       this.isNavOpen = !this.isNavOpen
     },
@@ -100,23 +95,7 @@ export default {
       this.checked = !this.checked;
     },
 
-    async loginWithGoogle() {
-      // loading set to true
-      this.loading = true;
-      // clear old errors
-      this.errors = [];
-      try {
-        let response = await firebase
-          .auth()
-          .signInWithPopup(new firebase.auth.GoogleAuthProvider());
-        this.user = response.user;
-        router.push("/");
-      } catch (error) {
-        this.errors.push(error.message);
-        // set loading to false
-        this.loading = false;
-      }
-    }
+    
   },
 
   created() {

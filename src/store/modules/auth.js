@@ -1,9 +1,12 @@
 import { firebaseAuth } from '../../config/firebaseConfig';
-
+import router from "../../router";
+import firebase from 'firebase';
 const state = {
 	isLoggedIn: firebaseAuth().currentUser != null,
 	user: firebaseAuth().currentUser,
-	//provider: new firebaseAuth().GoogleAuthProvider()
+	errors: [],
+    loading: false
+
 }
 
 const mutations = {
@@ -14,7 +17,23 @@ const mutations = {
 }
 
 const actions = {
-
+	async loginWithGoogle() {
+		// loading set to true
+		state.loading = true;
+		// clear old errors
+		state.errors = [];
+		try {
+		  let response = await firebase
+			.auth()
+			.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+		  state.user = response.user;
+		  router.push("/");
+		} catch (error) {
+		  state.errors.push(error.message);
+		  // set loading to false
+		  state.loading = false;
+		}
+	  }
 }
 
 const getters = {

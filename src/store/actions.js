@@ -41,10 +41,6 @@ export function listenToProductList({commit}) {
 	});
 }
 
-export function loginWithGoogle (_, provider) {
-	return firebaseAuth().signInWithPopup(provider);
-}
-
 export function getShoppingCart({commit}, {uid, currentCart}) {
 	if (uid) {
 		return ref.child("cart/" + uid).once('value').then((cart) => {

@@ -25,3 +25,4 @@ export default {
 @import "../styles/base/_global.css";
 @import "../styles/modules/_gallery.css";
 </style>
+

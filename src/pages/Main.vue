@@ -5,6 +5,7 @@
     <SelectedNews :selectedNews = 'selectedNews' />  
     <Section />
     <Aboutus />
+    <Groupmember />
     <Footer />
   </div>
 </template>
@@ -18,6 +19,7 @@ import Gallery from "../components/Gallery";
 import SelectedNews from "../components/SelectedNews";
 import Section from "../components/Section";
 import Aboutus from "../components/Aboutus";
+import Groupmember from "../components/Groupmember";
 import Footer from "../components/Footer";
 
 export default {
@@ -28,6 +30,7 @@ export default {
     SelectedNews,
     Section,
     Aboutus,
+    Groupmember,
     Footer
   },
   computed: mapGetters(['totalNews', 'selectedNews']),

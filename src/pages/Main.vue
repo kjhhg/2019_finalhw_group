@@ -2,7 +2,7 @@
   <div class="container-grid">
     <Nav/>
     <Gallery :totalNews = 'totalNews' />
-    <SelectedNews :selectedNews = 'selectedNews' />  
+    <!-- <SelectedNews :selectedNews = 'selectedNews' />   -->
     <Section />
     <Aboutus />
     <Groupmember />

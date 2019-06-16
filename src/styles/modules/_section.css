@@ -1,11 +1,26 @@
 .section {
    grid-row: section-start / section-end;
-   grid-column: center-start / center-end;
-
-   margin: 5rem 0;
+   grid-column: full-start / full-end;
 
    display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+   grid-template-rows: 
+   [top]
+   min-content
+   [contant-start]
+   min-content
+   [contant-end]
+   min-content
+   [bottom];
+
+   grid-template-columns: 
+   [full-start] 
+   minmax(5rem,1fr)
+   [contant-start]
+   repeat(auto-fit, minmax(25rem, 1fr))
+   [contant-end] 
+   minmax(5rem,1fr)
+   [full-end];
+   
    grid-gap: 5rem;
    background-color: #FFD0BB;
 }
@@ -13,6 +28,7 @@
 .news {
    background-color: $color-primary-light;
    display: grid;
+   grid-row: contant-start/contant-end;
    grid-template-rows: 2rem min-content;
    box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24);
 

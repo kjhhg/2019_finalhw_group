@@ -5,6 +5,9 @@ import firebase from "firebase";
 import Main from "../pages/Main";
 import Login from "../pages/Login";
 import News16 from "../pages/News16";
+// import Login from '../components/auth/Login.vue';
+import Register from '../components/auth/Register.vue';
+import { notStrictEqual } from "assert";
 
 Vue.use(VueRouter);
 
@@ -37,6 +40,16 @@ export default new VueRouter({
           next();
         }
       }
-    }
+    },
+    // {
+    //   path: 'notic',
+    //   component: notStrictEqual, 
+    //   name:'notic'
+    // },
+    // {
+    //   path:'register',
+    //   cpmponent: Register,
+    //   name:'register'
+    // }
   ]
 });

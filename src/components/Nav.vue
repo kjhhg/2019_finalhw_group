@@ -8,7 +8,7 @@
     <div id="myNav" :class="`overlay ${myNav}`">
       <div class="overlay-content">
         <img src="../img/sweet_time.png" class="overlay_img">
-        <a href="#">首頁</a>
+        <button @click="main" class="btn btn-bg btn-lg btn-block">首頁</button>
         <a href="#">商品總覽</a>
         <a href="#">購買須知</a>
         <a href="#">聯絡我們</a>
@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import router from "../router";
+
 export default {
   name: "Nav",
   data() {
@@ -59,8 +61,13 @@ export default {
 
     onRoute() {
       this.checked = !this.checked;
-    }
+    },
+    
+    main (){
+      router.push("/conectus");
+    },
   },
+  
 
   created() {
     window.addEventListener("resize", this.onResize);
@@ -124,7 +131,6 @@ export default {
   padding: 8px;
   text-decoration: none;
   font-size: 36px;
-  color: #818181;
   color: $color-white;
   display: block;
   transition: 0.3s;
@@ -135,12 +141,12 @@ export default {
   color: #f1f1f1;
 }
 
-.overlay .closebtn {
+/* .overlay .closebtn {
   position: absolute;
   top: 20px;
   right: 45px;
   font-size: 60px;
-}
+} */
 
 .overlay_img{
     height: 5rem;
@@ -149,5 +155,11 @@ export default {
 }
 
 .overlay-width {
+}
+
+.btn-bg {
+  font-family: '微軟正黑體';
+  font-size: 40px;
+  color: $color-white;
 }
 </style>

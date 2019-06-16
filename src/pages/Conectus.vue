@@ -1,10 +1,8 @@
 <template>
   <div class="container-grid">
     <Nav/>
-    <Gallery :totalNews = 'totalNews' />
-    <SelectedNews :selectedNews = 'selectedNews' />  
+    <p>us</p>
     <Section />
-    <Aboutus />
     <Footer />
   </div>
 </template>
@@ -14,27 +12,21 @@ import { mapActions } from 'vuex';
 import { mapGetters } from 'vuex';
 
 import Nav from "../components/Nav";
-import Gallery from "../components/Gallery";
-import SelectedNews from "../components/SelectedNews";
 import Section from "../components/Section";
-import Aboutus from "../components/Aboutus";
 import Footer from "../components/Footer";
 
 export default {
-  name: "Main",
+  name: "Conectus",
   components: {
     Nav,
-    Gallery,
-    SelectedNews,
     Section,
-    Aboutus,
     Footer
   },
-  computed: mapGetters(['totalNews', 'selectedNews']),
-  methods: mapActions(['init']),
-  created() {
-    this.init();
-  }
+//   computed: mapGetters(['totalNews', 'selectedNews']),
+//   methods: mapActions(['init']),
+//   created() {
+//     this.init();
+//   }
 };
 </script>
 
@@ -42,4 +34,3 @@ export default {
 @import "../styles/base/_variables.css";
 @import "../styles/base/_global.css";
 </style>
-

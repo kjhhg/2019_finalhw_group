@@ -35,7 +35,7 @@ export function loginWithEmail (_, {email, password}) {
   return firebaseAuth().signInWithEmailAndPassword(email, password);
 }
 
-export function listenToProductList({commit}) {
+export function listenToNewsList({commit}) {
 	return ref.child("products").on('value', (products) => {
 		commit('UPDATE_PRODUCT_LIST', products.val());
 	});

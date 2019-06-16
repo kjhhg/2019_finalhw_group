@@ -41,15 +41,16 @@ export default new VueRouter({
         }
       }
     },
-    // {
-    //   path: 'notic',
-    //   component: notStrictEqual, 
-    //   name:'notic'
-    // },
-    // {
-    //   path:'register',
-    //   cpmponent: Register,
-    //   name:'register'
-    // }
+    {
+      path: "/conectus",
+      // component: Conectus,
+      // beforeEnter: (to, from, next) => {
+      //   if (!firebase.auth().currentUser) {
+      //     next("/login");
+      //   } else {
+      //     next();
+      //   }
+      // }
+    }
   ]
 });

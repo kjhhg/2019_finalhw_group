@@ -35,9 +35,11 @@ export function loginWithEmail (_, {email, password}) {
   return firebaseAuth().signInWithEmailAndPassword(email, password);
 }
 
+
+
 export function listenToProductList({commit}) {
-	return ref.child("products").on('value', (products) => {
-		commit('UPDATE_PRODUCT_LIST', products.val());
+	return ref.child("productList").on('value', (productList) => {
+		commit('UPDATE_PRODUCT_LIST', productList.val());
 	});
 }
 

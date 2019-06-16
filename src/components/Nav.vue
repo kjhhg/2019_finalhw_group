@@ -8,10 +8,18 @@
     <div id="myNav" :class="`overlay ${myNav}`">
       <div class="overlay-content">
         <img src="../img/sweet_time.png" class="overlay_img">
-        <a href="#">首頁</a>
-        <a href="#">商品總覽</a>
-        <a href="#">購買須知</a>
-        <a href="#">聯絡我們</a>
+        <router-link to="/" tag="li" class="nav-item" active-class="active">
+          <a class="nav-link">首頁</a>
+        </router-link>
+        <router-link to="/allproducts" tag="li" class="nav-item" active-class="active">
+          <a class="nav-link">商品總覽</a>
+        </router-link>
+        <router-link to="/notice" tag="li" class="nav-item" active-class="active">
+          <a class="nav-link">購買須知</a>
+        </router-link>
+        <router-link to="/contactus" tag="li" class="nav-item" active-class="active">
+          <a class="nav-link">聯絡我們</a>
+        </router-link>
       </div>
     </div>
     

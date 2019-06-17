@@ -1,14 +1,15 @@
 .footer {
    background-color: #FCA399;
    font-family: '微軟正黑體';
+   display: grid;
    grid-column: 1 / -1;
    grid-row: footer-start / footer-end;
    color: $color-white;
-   display: flex;
+   
    justify-content: center;
    align-items: center;
-   display: flex;
-   flex-direction: column;
+   /* display: flex;
+   flex-direction: column; */
 
    /* @media (min-width: $bp-large) {
       flex-direction: row;
@@ -18,5 +19,7 @@
    &__description {
       margin: 0 2rem;
       text-align: center;
+      justify-self: center;
+      align-self: center;
    }
 }

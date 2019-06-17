@@ -37,7 +37,7 @@ a {
     [aboutus-end group-start]
     min-content
     [group-end footer-start] 
-    6rem 
+    min-content
     [footer-end];
 
     grid-template-columns: 

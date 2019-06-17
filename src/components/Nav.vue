@@ -21,21 +21,16 @@
           <a class="nav-link">聯絡我們</a>
         </router-link>
         <router-link to="/login" tag="li" v-if="!isLoggedIn" class="nav-item" active-class="active">
-          <a class="nav-link">登入</a>
+          <a class="nav-link">登入/註冊</a>
         </router-link>
         <li v-if="isLoggedIn" class="li-pointer nav-item">
           <a @click="logout" class="nav-link">登出 {{ userEmail }}</a>
         </li>
-        <router-link to="/register" tag="li" v-if="!isLoggedIn" class="nav-item" active-class="active">
-          <a class="nav-link">註冊</a>
-        </router-link>
-        <div v-if="!isLoggedIn" class="nav-item" active-class="active">
-          <a @click="loginWithGoogle" v-if="!isLoggedIn" class="nav-link">用Google帳號登入</a>
-        </div>
+        
       </div>
     </div>
     <li>
-          <router-link to="/cart" class="btn navbar-btn" tag="button">
+          <router-link to="/cart" class="btn" tag="button">
             購物車 <span class="badge badge-light">{{ numItems }} ($ {{ cartValue }})</span>
           </router-link>
     </li>
@@ -110,13 +105,8 @@ export default {
 
   created() {
     window.addEventListener("resize", this.onResize);
-    // if (window.innerWidth > 1000) {
-    //   this.size = "lg";
-    //   this.myNav = "hide-lg";
-    // } else {
       this.size = "sm";
       this.myNav = "hide-sm";
-    // }
   }
   
 };

@@ -74,6 +74,8 @@ section{
   grid-column-gap: 250px;
   
   background-color: #FEEBD5;
+  align-self: center;
+  justify-self: center;
 }
 
 .groupmember{

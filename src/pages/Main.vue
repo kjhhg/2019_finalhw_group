@@ -1,8 +1,7 @@
 <template>
   <div class="container-grid">
     <Nav/>
-    <Gallery :totalNews = 'totalNews' />
-    <SelectedNews :selectedNews = 'selectedNews' />  
+    <Gallery />
     <Section />
     <Aboutus />
     <Groupmember />
@@ -12,11 +11,9 @@
 
 <script>
 import { mapActions } from 'vuex';
-import { mapGetters } from 'vuex';
 
 import Nav from "../components/Nav";
 import Gallery from "../components/Gallery";
-import SelectedNews from "../components/SelectedNews";
 import Section from "../components/Section";
 import Aboutus from "../components/Aboutus";
 import Groupmember from "../components/Groupmember";
@@ -27,13 +24,11 @@ export default {
   components: {
     Nav,
     Gallery,
-    SelectedNews,
     Section,
     Aboutus,
     Groupmember,
     Footer
   },
-  computed: mapGetters(['totalNews', 'selectedNews']),
   methods: mapActions(['init']),
   created() {
     this.init();

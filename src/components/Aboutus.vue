@@ -1,6 +1,6 @@
 <template>
   <section >
-    <div class="aboutus">------關於我們------</div>
+    <div class="aboutus">--------  關於我們  --------</div>
     <p class="titleword">
       一群因為甜點而據再一起的人們，創立了Sweet Time這個品牌<br>
       為了造福更多熱愛甜點的朋友們<br>

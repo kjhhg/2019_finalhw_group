@@ -5,13 +5,12 @@
 </template>
 
 <script>
-import NewsList from './NewsList';
 import { mapGetters } from 'vuex';
 
 export default {
   name: "Section",
   components: {
-    NewsList
+    
   },
   computed: mapGetters([
       "socialNews", 

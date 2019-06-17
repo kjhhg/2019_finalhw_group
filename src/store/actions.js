@@ -8,7 +8,7 @@ export const updateCart = ({
   commit('UPDATE_CART', {item, quantity, isAdd});
   if (isAdd) {
     let message_obj = {
-      message: `Add ${item.title} to cart successfully`,
+      message: `成功將 ${item.title} 加入購物車`,
       messageClass: "success",
       autoClose: true
     }

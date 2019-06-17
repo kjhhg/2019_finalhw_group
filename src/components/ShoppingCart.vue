@@ -91,7 +91,7 @@ export default {
           }).then(() => {
             this.addMessage({
               messageClass: 'success',
-              message: 'Your shopping cart is saved successfully'
+              message: '已成功儲存您的購物車'
             });
             this.$router.push('/');
           });
@@ -104,7 +104,7 @@ export default {
       } else {
         this.addMessage({
           messageClass: 'warning',
-          message: 'Please login to save your cart'
+          message: '請登入儲存您的購物車'
         });
       }
     },
@@ -113,7 +113,7 @@ export default {
         if (!this.cartItemList || this.cartItemList.length == 0) {
           this.addMessage({
             messageClass: 'warning',
-            message: 'Your cart is empty!'
+            message: '您的購物車已經清空!'
           });
           return;
         }
@@ -129,7 +129,7 @@ export default {
           }).then(() => {
             this.addMessage({
               messageClass: 'success',
-              message: 'Your order has been successfully processed!'
+              message: '購買成功'
             });
             this.saveShoppingCart({
               cartItemList: [],
@@ -147,7 +147,7 @@ export default {
       } else {
         this.addMessage({
           messageClass: 'warning',
-          message: 'Please login to checkout'
+          message: '請先登入'
         });
       }
     }

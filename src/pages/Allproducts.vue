@@ -2,7 +2,6 @@
 <div class="d-flex flex-column sticky-footer-wrapper">
     <main class="flex-fill">
       <app-header></app-header>
-      <message-component></message-component>
       <div class="container mt-3">
           <div class="row">
             <div class="col-md-12">
@@ -19,13 +18,11 @@
 <script>
   import { mapActions } from 'vuex';
   import Header from '../components/Nav.vue';
-  import MessageComponent from '../components/common/MessageComponent.vue';
   import Store from "../components/Store"
   import Footer from "../components/Footer";
   export default {
     components: {
       appHeader: Header,
-      MessageComponent,
       Store,
       Footer
     },

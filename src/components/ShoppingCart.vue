@@ -1,5 +1,6 @@
 <template>
 <div class="container table-responsive">
+  <app-header></app-header>
   <table id="cart" class="table table-hover table-sm">
     <thead>
       <tr>
@@ -43,13 +44,15 @@ import {
   mapActions,
   mapGetters
 } from 'vuex';
+import Header from '../components/Nav.vue';
 import CartItem from './cart/CartItem.vue';
 export default {
   computed: {
     ...mapGetters(['cartItemList', 'isLoggedIn', 'products', 'currentUser', 'cartValue'])
   },
   components: {
-    appCartItem: CartItem
+    appCartItem: CartItem,
+    appHeader: Header
   },
   methods: {
     ...mapActions(['saveShoppingCart', 'addMessage', 'saveToTransaction', 'clearCart']),

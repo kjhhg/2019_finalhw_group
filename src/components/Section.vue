@@ -1,25 +1,6 @@
 <template>
   <section class="section">
-      <NewsList 
-        id="socialNews"
-        :newsType="socialNews"
-        :newsTitle="'SocialNews'"
-      />
-      <NewsList 
-        id="entertainmentNews"
-        :newsType="entertainmentNews"
-        :newsTitle="'EntertainmentNews'"
-      />
-      <NewsList 
-        id="sportNews"
-        :newsType="sportNews"
-        :newsTitle="'SportNews'"
-      />
-      <NewsList 
-        id="taiwanNews"
-        :newsType="taiwanNews"
-        :newsTitle="'TaiwanNews'"
-      />
+     
   </section>
 </template>
 

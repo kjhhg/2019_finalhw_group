@@ -20,23 +20,25 @@
         <router-link to="/contactus" tag="li" class="nav-item" active-class="active">
           <a class="nav-link">聯絡我們</a>
         </router-link>
-      </div>
-    </div>
-    
-    <ul>
         <router-link to="/login" tag="li" v-if="!isLoggedIn" class="nav-item" active-class="active">
-          <a class="nav-link">Login</a>
+          <a class="nav-link">登入</a>
         </router-link>
         <li v-if="isLoggedIn" class="li-pointer nav-item">
-          <a @click="logout" class="nav-link">Logout {{ userEmail }}</a>
+          <a @click="logout" class="nav-link">登出 {{ userEmail }}</a>
         </li>
         <router-link to="/register" tag="li" v-if="!isLoggedIn" class="nav-item" active-class="active">
-          <a class="nav-link">Register</a>
+          <a class="nav-link">註冊</a>
         </router-link>
-        <div class="text-center mt-4">
-          <button @click="loginWithGoogle" v-if="!isLoggedIn" class="nav-link">Login with Google</button>
+        <div v-if="!isLoggedIn" class="nav-item" active-class="active">
+          <a @click="loginWithGoogle" v-if="!isLoggedIn" class="nav-link">用Google帳號登入</a>
         </div>
-    </ul>
+      </div>
+    </div>
+    <li>
+          <router-link to="/cart" class="btn navbar-btn" tag="button">
+            購物車 <span class="badge badge-light">{{ numItems }} ($ {{ cartValue }})</span>
+          </router-link>
+    </li>
   </nav>
 </template>
 

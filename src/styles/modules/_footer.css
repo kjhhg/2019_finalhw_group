@@ -1,5 +1,6 @@
 .footer {
-   background-color: $color-primary-dark;
+   background-color: #FCA399;
+   font-family: '微軟正黑體';
    grid-column: 1 / -1;
    grid-row: footer-start / footer-end;
    color: $color-white;
@@ -9,10 +10,10 @@
    display: flex;
    flex-direction: column;
 
-   @media (min-width: $bp-large) {
+   /* @media (min-width: $bp-large) {
       flex-direction: row;
-      grid-column: 2 / -1;
-   }
+      grid-column: 1 / -1;
+   } */
 
    &__description {
       margin: 0 2rem;

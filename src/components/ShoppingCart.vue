@@ -3,10 +3,10 @@
   <table id="cart" class="table table-hover table-sm">
     <thead>
       <tr>
-        <th style="width:50%">Product</th>
-        <th style="width:10%">Price</th>
-        <th style="width:8%">Quantity</th>
-        <th style="width:22%" class="text-center">Subtotal</th>
+        <th style="width:50%">產品</th>
+        <th style="width:10%">價格</th>
+        <th style="width:8%">剩餘數量</th>
+        <th style="width:22%" class="text-center">小計</th>
         <th style="width:10%"></th>
       </tr>
     </thead>
@@ -17,19 +17,19 @@
 
     <tfoot>
       <tr class="d-table-row d-sm-none">
-        <td class="text-center"><strong>Total ${{ cartValue }}</strong></td>
+        <td class="text-center"><strong>總金額 ${{ cartValue }}</strong></td>
       </tr>
       <tr>
         <td>
           <button class="btn btn-warning" @click="saveShoppingCartLocal">
-							<i class="fa fa-angle-left"></i> Save and Continue Shopping
+							<i class="fa fa-angle-left"></i> 儲存並繼續購買
 						</button>
         </td>
         <td colspan="2" class="d-none d-sm-table-cell"></td>
-        <td class="d-none d-sm-table-cell text-center"><strong>Total ${{ cartValue }}</strong></td>
+        <td class="d-none d-sm-table-cell text-center"><strong>總金額 ${{ cartValue }}</strong></td>
         <td class="px-0">
           <button class="btn btn-success" @click="checkout">
-							<span class="text-nowrap">Checkout <i class="fa fa-angle-right d-inline"></i></span>
+							<span class="text-nowrap">前往結帳 <i class="fa fa-angle-right d-inline"></i></span>
 					</button>
         </td>
       </tr>
@@ -164,8 +164,5 @@ export default {
 
 .table-sm {
   font-size: 0.875rem;
-  /deep/ h4 {
-    font-size: 1.25rem;
-  }
 }
 </style>

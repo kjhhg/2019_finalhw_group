@@ -172,7 +172,7 @@ export default {
 .grey-text {
   color: #707070;
   font-family: '微軟正黑體';
-}   
+}
 
 td{
   border: 1px solid transparent !important;

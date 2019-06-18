@@ -28,8 +28,6 @@
 <script>
 import { mapGetters } from 'vuex'
 import ProductItem from './product/ProductItem.vue';
-import GridLoader from 'vue-spinner/src/GridLoader.vue';
-
 export default {
   data() {
     return {
@@ -42,8 +40,7 @@ export default {
     ...mapGetters(['products', 'isProductLoading']),
   },
   components: {
-    appProductItem: ProductItem,
-    GridLoader
+    appProductItem: ProductItem
   },
   methods: {
     changeDisplay(isList) {

@@ -8,7 +8,7 @@
       </router-link>
     </div>
     <div class="col-md-6 offset-md-3">
-      <h2 class="login-header text-center mb-5 display-4">
+      <h2 class="login-header text-center mb-5 display-4 login-font">
         登入/註冊
       </h2>
       <!-- login with email and password -->
@@ -33,6 +33,7 @@
           <img src="../../img/1024px-Google__G__Logo.svg.png" alt="">
           Google帳號登入
         </button>
+        <br>
       </div>
     </div>
   </div>
@@ -53,26 +54,26 @@ export default {
   methods: {
     ...mapActions(['addMessage', 'clearMessage', 'loginWithEmail', 'registerByEmail','loginWithGoogle']),
     loginWithEmailLocal() {
-      this.isLoading = true
-      let data = {
-        email: this.email,
-        password: this.password
-      }
-      this.loginWithEmail(data).then(() => {
-        this.clearMessage();
-        this.$router.push({
-          name: 'mainpage'
-        });
-      }).catch((error) => {
-        let message_obj = {
-          message: error.message,
-          messageClass: "danger",
-          autoClose: true
+        this.isLoading = true
+        let data = {
+          email: this.email,
+          password: this.password
         }
-        this.addMessage(message_obj);
-      }).then(() => {
-        this.isLoading = false
-      })
+        this.loginWithEmail(data).then(() => {
+          this.clearMessage();
+          this.$router.push({
+            name: 'mainpage'
+          });
+        }).catch((error) => {
+          let message_obj = {
+            message: error.message,
+            messageClass: "danger",
+            autoClose: true
+          }
+          this.addMessage(message_obj);
+        }).then(() => {
+          this.isLoading = false
+        })
     },
     registerByEmailLocal() {
         this.isLoading = true
@@ -95,7 +96,7 @@ export default {
         }).then(() => {
           this.isLoading = false
         })
-      }
+    }
   }
 }
 </script>
@@ -142,5 +143,9 @@ h2 img{
   height: 150px;
   width: auto;
   margin-top: -50px;
+}
+
+.login-font {
+  font-family: '微軟正黑體'
 }
 </style>

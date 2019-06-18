@@ -38,16 +38,9 @@ import {
   mapActions,
   mapGetters
 } from 'vuex';
-import GridLoader from 'vue-spinner/src/GridLoader.vue';
-import Header from './Nav.vue';
-import Footer from "./Footer.vue";
+
 
 export default {
-  components: {
-    GridLoader,
-    appHeader: Header,
-    Footer
-  },
   data() {
     return {
       loaderColor: "#5cb85c",

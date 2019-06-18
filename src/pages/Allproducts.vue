@@ -1,5 +1,5 @@
 <template>
-<div class="d-flex flex-column sticky-footer-wrapper">
+<div class="d-flex flex-column sticky-footer-wrapper bg">
     <main class="flex-fill">
       <app-header></app-header>
       <div class="container mt-3">
@@ -18,7 +18,7 @@
 <script>
   import { mapActions } from 'vuex';
   import Header from '../components/Nav.vue';
-  import Store from "../components/Store"
+  import Store from "../components/Store";
   import Footer from "../components/Footer";
   export default {
     components: {
@@ -38,6 +38,9 @@
 </script>
 
 <style>
+  .bg{
+    background-color: #FFD9C4;
+  }
   #reset-store-panel {
     position: fixed; bottom: 0px; right: 0px;
   }

@@ -1,5 +1,5 @@
 <template>
-<div class="container table-responsive">
+<div class="container table-responsive bg">
   <app-header></app-header>
   <table id="cart" class="table table-hover table-sm">
     <thead>
@@ -22,14 +22,14 @@
       </tr>
       <tr>
         <td>
-          <button class="btn btn-warning" @click="saveShoppingCartLocal">
+          <button class="btn lg-color" @click="saveShoppingCartLocal">
 							<i class="fa fa-angle-left"></i> 儲存並繼續購買
 						</button>
         </td>
         <td colspan="2" class="d-none d-sm-table-cell"></td>
         <td class="d-none d-sm-table-cell text-center"><strong>總金額 ${{ cartValue }}</strong></td>
         <td class="px-0">
-          <button class="btn btn-success" @click="checkout">
+          <button class="btn lg-color" @click="checkout">
 							<span class="text-nowrap">前往結帳 <i class="fa fa-angle-right d-inline"></i></span>
 					</button>
         </td>
@@ -113,7 +113,7 @@ export default {
         if (!this.cartItemList || this.cartItemList.length == 0) {
           this.addMessage({
             messageClass: 'warning',
-            message: '您的購物車已經清空!'
+            message: '您的購物車內沒有東西!'
           });
           return;
         }

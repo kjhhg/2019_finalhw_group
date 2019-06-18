@@ -1,6 +1,6 @@
 <template>
 <div class="mb-3 col-sm-6 col-md-4 item" :class="{'list-group-item': displayList}">
-  <div class="thumbnail card">
+  <div class="thumbnail card bg border-light">
     <div class="img-event intrinsic">
       <img :src="item.thumbnail_url" alt="" class="grow thumbnail-image card-img-top intrinsic-item p-3">
     </div>
@@ -13,7 +13,7 @@
       <div class="row">
         <p class="col-6 lead">${{ item.price }}</p>
         <p class="col-6">
-          <button class="btn btn-success pull-right" :disabled="item.quantity === 0" @click="addItem">
+          <button class="btn lg-color pull-right" :disabled="item.quantity === 0" @click="addItem">
             加入購物車
           </button>
         </p>
@@ -76,7 +76,7 @@ div.card {
 .list-group-item {
   float: none;
   width: 100%;
-  background-color: #fff;
+  background-color: #FFD9C4;
   margin-bottom: 30px;
   -ms-flex: 0 0 100%;
   flex: 0 0 100%;
@@ -103,6 +103,10 @@ div.card {
     float: left;
     width: 80%;
     margin: 0;
+  }
+
+  .border-light {
+    border-color: #FFD9C4;
   }
 
   @media (max-width: 767.98px) {

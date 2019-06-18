@@ -6,10 +6,10 @@
   <div v-else class="row action-panel">
     <div class="col-12">
       <div class="btn-group btn-group-sm pull-right">
-				<button id="list" class="btn btn-outline-dark" @click.prevent="changeDisplay(true)">
+				<button id="list" class="btn lg-color" @click.prevent="changeDisplay(true)">
           <i class="fa fa-list" aria-hidden="true"></i> List
 				</button>
-				<button id="grid" class="btn btn-outline-dark" @click.prevent="changeDisplay(false)">
+				<button id="grid" class="btn lg-color" @click.prevent="changeDisplay(false)">
           <i class="fa fa-th" aria-hidden="true"></i> Grid
 				</button>
       </div>
@@ -61,5 +61,9 @@ export default {
 .action-panel {
   margin-bottom: 10px;
   margin-right: 5px;
+}
+
+.lg-color {
+  color: #fff;
 }
 </style>

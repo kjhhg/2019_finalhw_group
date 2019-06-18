@@ -1,6 +1,8 @@
 <template>
   <nav class="nav">
-    <img src="../img/sweet_time.png" class="nav__logo" alt="">
+    <router-link to="/">
+      <img src="../img/sweet_time.png" class="nav__logo" alt="">
+    </router-link>
     <input @click="onCheck" type="checkbox" class="nav__checkbox" id="nav-toggle">
     <label for="nav-toggle" class="nav__btn">
       <button :class="`${navIconClr}`"></button>
@@ -30,9 +32,10 @@
       </div>
     </div>
     <li>
-          <router-link to="/cart" class="btn" tag="button">
-            購物車 <span class="badge badge-light">{{ numItems }} ($ {{ cartValue }})</span>
-          </router-link>
+      <router-link to="/cart" class="btn btn-own btn-block" tag="button">
+        <span class="badge badge-light money">{{ numItems }} ($ {{ cartValue }})</span> 
+        <i class="fa fa-shopping-cart lg-color money"></i>
+      </router-link>
     </li>
   </nav>
 </template>
@@ -186,5 +189,20 @@ export default {
 }
 
 .overlay-width {
+}
+
+.btn-own{
+  padding: 10px;
+}
+.money{
+  background-color: #FE9287;
+  color: #fff;
+}
+.btn:hover .money{
+  background-color: #fff;
+  color:#FE9287;
+}
+.fa{
+  font-size: 28px;
 }
 </style>

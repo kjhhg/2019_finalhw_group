@@ -1,6 +1,6 @@
 <template>
   <div class="container-grid">
-    <Nav/>
+    <app-header></app-header>
     <Gallery />
     <Section />
     <Aboutus />
@@ -12,7 +12,7 @@
 <script>
 import { mapActions } from 'vuex';
 
-import Nav from "../components/Nav";
+import Header from '../components/Nav.vue';
 import Gallery from "../components/Gallery";
 import Section from "../components/Section";
 import Aboutus from "../components/Aboutus";
@@ -22,7 +22,7 @@ import Footer from "../components/Footer";
 export default {
   name: "Main",
   components: {
-    Nav,
+    appHeader: Header,
     Gallery,
     Section,
     Aboutus,

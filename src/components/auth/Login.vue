@@ -1,9 +1,11 @@
 <template>
   <div>
     <div class="jumbotron jumbotron-bg text-white text-center">
-      <h2 class="display-3">
-        <img src="../../img/sweet_time.png" alt="">
-      </h2>
+      <router-link to="/">
+        <h2 class="display-3">
+          <img src="../../img/sweet_time.png" alt="">
+        </h2>
+      </router-link>
     </div>
     <div class="col-md-6 offset-md-3">
       <h2 class="login-header text-center mb-5 display-4">

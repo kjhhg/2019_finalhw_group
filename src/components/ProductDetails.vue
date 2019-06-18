@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="container bg">
   <div class="col-md-12">
     <div v-if="isProductLoading" class="text-center">
       <grid-loader :loading="isProductLoading" :color="loaderColor" :size="loaderSize" class="d-inline-block" />
@@ -21,9 +21,9 @@
       <div class="ratings">
         <span>{{ item.quantity }} left in stock</span>
         <p class="pull-right">
-          <button @click="addItem" :disabled="item.quantity === 0" class="btn btn-success">
-                            Add to cart
-                        </button>
+          <button @click="addItem" :disabled="item.quantity === 0" class="btn lg-color">
+                            加入購物車
+          </button>
         </p>
         <div class="clearfix"></div>
       </div>
@@ -38,10 +38,14 @@ import {
   mapGetters
 } from 'vuex';
 import GridLoader from 'vue-spinner/src/GridLoader.vue';
+import Header from './Nav.vue';
+import Footer from "./Footer.vue";
 
 export default {
   components: {
-    GridLoader
+    GridLoader,
+    appHeader: Header,
+    Footer
   },
   data() {
     return {

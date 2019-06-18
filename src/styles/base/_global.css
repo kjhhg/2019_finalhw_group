@@ -28,7 +28,9 @@ a {
     4rem 
     [nav-end gallery-start] 
     38rem 
-    [gallery-end selectedNews-start] 
+    [gallery-end product-start ]
+    min-content 
+    [product-end selectedNews-start] 
     min-content 
     [selectedNews-end section-start] 
     min-content 

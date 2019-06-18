@@ -2,6 +2,7 @@
   <div class="container-grid">
     <app-header></app-header>
     <Gallery />
+    <mainPageProduct />
     <Section />
     <Aboutus />
     <Groupmember />
@@ -13,6 +14,7 @@
 import { mapActions } from 'vuex';
 
 import Header from '../components/Nav.vue';
+import mainPageProduct from '../components/mainPageStore';
 import Gallery from "../components/Gallery";
 import Section from "../components/Section";
 import Aboutus from "../components/Aboutus";
@@ -23,6 +25,7 @@ export default {
   name: "Main",
   components: {
     appHeader: Header,
+    mainPageProduct,
     Gallery,
     Section,
     Aboutus,

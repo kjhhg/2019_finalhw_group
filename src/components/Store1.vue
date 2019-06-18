@@ -5,7 +5,7 @@
           <span class="sr-only">Loading...</span>
         </div>
   </div>
-  <div v-else class="row action-panel">
+  <!-- <div v-else class="row action-panel">
     <div class="col-12">
       <div class="btn-group btn-group-sm pull-right">
 				<button id="list" class="btn lg-color" @click.prevent="changeDisplay(true)">
@@ -16,12 +16,10 @@
 				</button>
       </div>
     </div>
-  </div>
-
+  </div> -->
   <div class="row" v-if="!isProductLoading">
     <app-product-item v-for="prod in products" :item="prod" :key="prod.id" :displayList="displayList"></app-product-item>
   </div>
-
 </div>
 </template>
 

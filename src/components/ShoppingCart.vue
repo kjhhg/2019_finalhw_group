@@ -1,7 +1,7 @@
 <template>
 <div class="container table-responsive bg">
   <app-header></app-header>
-  <table id="cart" class="table table-hover table-sm grey-text">
+  <table id="cart" class="table-Danger table-hover table-sm no-border  grey-text"> 
     <thead>
       <tr>
         <th style="width:50%">產品</th>
@@ -172,9 +172,9 @@ export default {
 .grey-text {
   color: #707070;
   font-family: '微軟正黑體';
-}
+}   
 
-.border-white {
-  border: white;
+td{
+  border: 1px solid transparent !important;
 }
 </style>

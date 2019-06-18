@@ -1,7 +1,8 @@
 <template>
 <div class="mb-3 col-sm-6 col-md-4 item" :class="{'list-group-item': displayList}">
-  <div class="thumbnail card bg border-light">
-    <div class="img-event intrinsic">
+     
+  <div class="thumbnail card bg ">
+    <div class="img-event intrinsic border-0">
       <img :src="item.thumbnail_url" alt="" class="grow thumbnail-image card-img-top intrinsic-item p-3">
     </div>
     <div class="card-body">
@@ -53,6 +54,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+//  .border {
+//     color: #FFD9C4;
+  
 div.card {
   height: 100%;
 }
@@ -95,15 +99,17 @@ div.card {
     width: 100%;
   }
   .img-event {
-    width: 20%;
+    width: 100%;
     float: left;
     padding: 0 !important;
     margin: 0;
-    height: auto;
+    height: 20%;
   }
 
   .thumbnail-image {
     position: static;
+    height:100%;
+    
   }
 
   .card-body {
@@ -112,9 +118,7 @@ div.card {
     margin: 0;
   }
 
-  .border-light {
-    border-color: #FFD9C4;
-  }
+ 
 
   @media (max-width: 767.98px) {
     .img-event {

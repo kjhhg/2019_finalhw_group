@@ -72,7 +72,9 @@ export default {
 }
 
 .panel-success {
-  background-color: #5cb85c;
+  background-color: #FE9287;
+  font-family: 微軟正黑體;
+  font-weight: bold;
   color: #FFF;
 }
 

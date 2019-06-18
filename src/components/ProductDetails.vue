@@ -19,7 +19,6 @@
         <p> {{ item.description }} </p>
       </div>
       <div class="ratings">
-        <span>還剩下{{ item.quantity }}個</span>
         <p class="pull-right">
           <button @click="addItem" :disabled="item.quantity === 0" class="btn lg-color">
                             加入購物車

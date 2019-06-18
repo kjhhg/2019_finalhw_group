@@ -16,6 +16,7 @@
     <img class="groupmember--picture3" src="../img/ted.png" alt="">
     <p class="groupmember--decr3">
       Project Planning <br>
+      DB Design <br>
       Coding <br>
     </p>
 

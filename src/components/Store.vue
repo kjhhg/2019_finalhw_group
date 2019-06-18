@@ -1,7 +1,9 @@
 <template>
-<div class="container" :class="{loadingItem: isProductLoading}">
-  <div class="row text-center" v-if="isProductLoading">
-    <grid-loader :loading="isProductLoading" :color="loaderColor" :size="loaderSize"></grid-loader>
+  <div class="container" :class="{loadingItem: isProductLoading}">
+     <div class="row text-center" v-if="isProductLoading">
+        <div class="spinner-border text-light" style="width: 4rem; height: 4rem" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
   </div>
   <div v-else class="row action-panel">
     <div class="col-12">
@@ -66,4 +68,6 @@ export default {
 .lg-color {
   color: #fff;
 }
+
+
 </style>

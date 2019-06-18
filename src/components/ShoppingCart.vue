@@ -1,7 +1,7 @@
 <template>
 <div class="container table-responsive bg">
   <app-header></app-header>
-  <table id="cart" class="table table-hover table-sm">
+  <table id="cart" class="table table-hover table-sm grey-text">
     <thead>
       <tr>
         <th style="width:50%">產品</th>
@@ -167,5 +167,14 @@ export default {
 
 .table-sm {
   font-size: 0.875rem;
+}
+
+.grey-text {
+  color: #707070;
+  font-family: '微軟正黑體';
+}
+
+.border-white {
+  border: white;
 }
 </style>

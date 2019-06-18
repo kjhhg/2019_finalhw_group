@@ -13,13 +13,13 @@
         </div>
       </div>
 
-      <div class="caption-full">
+      <div class="caption-full grey-text">
         <h4 class="pull-right">$ {{ item.price }}</h4>
         <h4> {{ item.title }}</h4>
         <p> {{ item.description }} </p>
       </div>
       <div class="ratings">
-        <span>{{ item.quantity }} left in stock</span>
+        <span>還剩下{{ item.quantity }}個</span>
         <p class="pull-right">
           <button @click="addItem" :disabled="item.quantity === 0" class="btn lg-color">
                             加入購物車
@@ -93,5 +93,10 @@ export default {
   padding-right: 10px;
   padding-left: 10px;
   color: #d17581;
+  font-family: '微軟正黑體';
+}
+.grey-text {
+  color: #707070;
+  font-family: '微軟正黑體';
 }
 </style>

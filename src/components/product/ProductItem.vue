@@ -5,13 +5,13 @@
       <img :src="item.thumbnail_url" alt="" class="grow thumbnail-image card-img-top intrinsic-item p-3">
     </div>
     <div class="card-body">
-      <router-link :to="'/product/' + item.id" tag="h5" class="card-title"><a>{{ item.title }}</a></router-link>
-      <h6 class="card-subtitle mb-2 remain">{{ item.quantity }} left in stock</h6>
+      <router-link :to="'/product/' + item.id" tag="h5" class="card-title"><a class="grey-text">{{ item.title }}</a></router-link>
+      <h6 class="card-subtitle mb-2 remain">還剩下{{ item.quantity }}個</h6>
 
-      <p class="card-text truncate">{{ item.description | shortDescription}}</p>
+      <p class="card-text truncate grey-text">{{ item.description | shortDescription}}</p>
 
       <div class="row">
-        <p class="col-6 lead">${{ item.price }}</p>
+        <p class="col-6 lead grey-text">${{ item.price }}</p>
         <p class="col-6">
           <button class="btn lg-color pull-right" :disabled="item.quantity === 0" @click="addItem">
             加入購物車
@@ -61,8 +61,15 @@ div.card {
   font-size: 0.875rem;
 }
 
+.grey-text {
+  color: #707070;
+  font-family: '微軟正黑體';
+
+}
+
 .remain {
   color: #d17581;
+  font-family: '微軟正黑體';
 }
 
 .grow {

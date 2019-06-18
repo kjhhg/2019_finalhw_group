@@ -7,7 +7,7 @@
     </div>
     <div class="card-body">
       <router-link :to="'/product/' + item.id" tag="h5" class="card-title"><a class="grey-text">{{ item.title }}</a></router-link>
-      <h6 class="card-subtitle mb-2 remain">還剩下{{ item.quantity }}個</h6>
+      
 
       <p class="card-text truncate grey-text">{{ item.description | shortDescription}}</p>
 

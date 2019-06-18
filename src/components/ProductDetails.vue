@@ -2,7 +2,9 @@
 <div class="container bg">
   <div class="col-md-12">
     <div v-if="isProductLoading" class="text-center">
-      <grid-loader :loading="isProductLoading" :color="loaderColor" :size="loaderSize" class="d-inline-block" />
+      <div class="spinner-border text-light" style="width: 4rem; height: 4rem" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
     </div>
     <div v-else class="card">
       <div class="row">
@@ -97,5 +99,10 @@ export default {
 .grey-text {
   color: #707070;
   font-family: '微軟正黑體';
+  font-weight:bold;
+}
+.card {
+margin-top:7em;
+background-color:#FFD9C4;
 }
 </style>

@@ -1,36 +1,16 @@
 <template>
   <section class="section">
-      <NewsList 
-        id="socialNews"
-        :newsType="socialNews"
-        :newsTitle="'SocialNews'"
-      />
-      <NewsList 
-        id="entertainmentNews"
-        :newsType="entertainmentNews"
-        :newsTitle="'EntertainmentNews'"
-      />
-      <NewsList 
-        id="sportNews"
-        :newsType="sportNews"
-        :newsTitle="'SportNews'"
-      />
-      <NewsList 
-        id="taiwanNews"
-        :newsType="taiwanNews"
-        :newsTitle="'TaiwanNews'"
-      />
+     
   </section>
 </template>
 
 <script>
-import NewsList from './NewsList';
 import { mapGetters } from 'vuex';
 
 export default {
   name: "Section",
   components: {
-    NewsList
+    
   },
   computed: mapGetters([
       "socialNews", 

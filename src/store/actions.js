@@ -8,7 +8,7 @@ export const updateCart = ({
   commit('UPDATE_CART', {item, quantity, isAdd});
   if (isAdd) {
     let message_obj = {
-      message: `Add ${item.title} to cart successfully`,
+      message: `成功將 ${item.title} 加入購物車`,
       messageClass: "success",
       autoClose: true
     }
@@ -35,9 +35,11 @@ export function loginWithEmail (_, {email, password}) {
   return firebaseAuth().signInWithEmailAndPassword(email, password);
 }
 
-export function listenToNewsList({commit}) {
-	return ref.child("products").on('value', (products) => {
-		commit('UPDATE_PRODUCT_LIST', products.val());
+
+
+export function listenToProductList({commit}) {
+	return ref.child("productList").on('value', (productList) => {
+		commit('UPDATE_PRODUCT_LIST', productList.val());
 	});
 }
 

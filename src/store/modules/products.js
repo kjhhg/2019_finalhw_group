@@ -1,6 +1,6 @@
 const state = {
 	isLoading: true,
-	NewsList: [
+	productList: [
 		// {
 		// 	id: 1,
 		// 	title: 'macbook Retina 13.3" ME662 (2013)',
@@ -38,8 +38,8 @@ const state = {
 }
 
 const mutations = {
-	'UPDATE_PRODUCT_LIST' (state, NewsList) {
-		state.NewsList = NewsList;
+	'UPDATE_PRODUCT_LIST' (state, productList) {
+		state.productList = productList;
 		state.isLoading = false;
 	}
 }
@@ -50,7 +50,7 @@ const actions = {
 
 const getters = {
 	products: (state) => {
-		return state.NewsList;
+		return state.productList;
 	},
 	isProductLoading: (state) => {
 		return state.isLoading;

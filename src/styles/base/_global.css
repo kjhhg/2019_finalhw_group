@@ -28,16 +28,16 @@ a {
     4rem 
     [nav-end gallery-start] 
     38rem 
-    [gallery-end selectedNews-start] 
+    [gallery-end product-start ]
     min-content 
-    [selectedNews-end section-start] 
+    [product-end section-start] 
     min-content 
     [section-end aboutus-start] 
     min-content 
     [aboutus-end group-start]
     min-content
     [group-end footer-start] 
-    6rem 
+    min-content
     [footer-end];
 
     grid-template-columns: 

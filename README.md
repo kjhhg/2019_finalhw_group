@@ -1,29 +1,23 @@
-# hellovuecli
+# Sweet Time官方網站
 
-## Project setup
-```
-npm install
-```
+## 緣起與創作原因
 
-### Compiles and hot-reloads for development
 ```
-npm run serve
+由於網路時代的來臨，我們想藉由網路購物的方式，讓喜愛甜點的大家不用出門排隊也能品嚐到照片中的美味甜點，因此創立了Sweet Time這個甜點品牌。
+
 ```
 
-### Compiles and minifies for production
+## 解決問題
+
 ```
-npm run build
+隨時想品嚐甜點就能上網訂購
+消費者不用出門排隊，也能在網路上購買喜愛的甜點
 ```
 
-### Run your tests
+## 特色
+
 ```
-npm run test
+以今年2019公布的代表色-活珊瑚色作為主色調，而甜點就如同愛情般點綴了生命，因此整體網頁以粉色調呈現，讓人置身於戀愛的感覺。
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

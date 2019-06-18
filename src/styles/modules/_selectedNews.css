@@ -2,9 +2,9 @@
    grid-row: selectedNews-start / selectedNews-end;
    grid-column: center-start / center-end;
 
+   margin: 5rem 0;
+
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
    grid-gap: 5rem;
-   background-color: #FFD0BB;
-   
 }

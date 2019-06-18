@@ -48,9 +48,9 @@ const mutations = {
 			});
 		}
 	},
-	'SET_CART' (state, NewsList) {
-		if (NewsList) {
-			state.cartItemList = NewsList;
+	'SET_CART' (state, productList) {
+		if (productList) {
+			state.cartItemList = productList;
 		}
 	},
 	'REMOVE_CART_ITEM' (state, {item}) {

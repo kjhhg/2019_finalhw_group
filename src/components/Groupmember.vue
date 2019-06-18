@@ -1,6 +1,6 @@
 <template>
-  <section >
-    <div class="groupmember">------團隊成員------</div>
+  <section class="section">
+    <div class="groupmember">團隊成員</div>
     <img class="groupmember--picture1" src="../img/hsuan.jpg" alt="">
     <p class="groupmember--decr1">
       Project Planning <br>
@@ -16,6 +16,7 @@
     <img class="groupmember--picture3" src="../img/ted.png" alt="">
     <p class="groupmember--decr3">
       Project Planning <br>
+      DB Design <br>
       Coding <br>
     </p>
 
@@ -24,7 +25,7 @@
 
 <script>
 // import NewsList from './NewsList';
-import { mapGetters } from 'vuex';
+//import { mapGetters } from 'vuex';
 
 export default {
   name: "Groupmember",
@@ -44,15 +45,16 @@ export default {
 @import "../styles/base/_variables.css";
 @import "../styles/base/_global.css";
 
-section{
+.section{
   display: grid;
   grid-row: group-start / group-end;
   grid-column: full-start / full-end;
+
   grid-template-rows:
   [section-start]
   30px
   [title-start]
-  minmax(5rem,1fr)
+  min-content
   [title-end picture-start] 
   min-content
   [picture-end work-start] 
@@ -63,17 +65,19 @@ section{
 
   grid-template-columns:
   [full-start] 
-  minmax(.5rem, 1fr)
+  minmax(2rem, 1fr)
   [center-start] 
   repeat(3, minmax(10rem, 1fr)) 
   [center-end] 
-  minmax(.5rem, 1fr) 
+  minmax(2rem, 1fr) 
   [full-end];
 
-  grid-gap: 70px;
-  grid-column-gap: 250px;
+  grid-gap: 5em;
+  grid-column-gap: 5%;
   
   background-color: #FEEBD5;
+  /* align-self: center;
+  justify-self: center; */
 }
 
 .groupmember{
@@ -83,9 +87,9 @@ section{
   color: #707070;
   display: grid;
   grid-row: title-start / title-end;
-  grid-column: center-start / center-end;
-  align-self: center;
-  justify-self: center;
+  grid-column: full-start / full-end;
+  text-align: center;
+  position: relative;
 
   &--picture1{
     height: 200px;
@@ -150,6 +154,56 @@ section{
     text-align: center;
     align-self: center;
     justify-self: center;
+  }
+}
+.groupmember::before {
+    border-top: 3px solid#707070;
+    content: "";
+    display: block;
+    height: 1px;
+    left: 22%;
+    position: absolute;
+    top: 50%;
+    width: 22%;
+    height: 4px;
+    z-index: 0;
+}
+.groupmember::after {
+    border-top: 3px solid #707070;
+    content: "";
+    display: block;
+    height: 1px;
+    right: 22%;
+    position: absolute;
+    top: 50%;
+    width: 22%;
+    height: 4px;
+    z-index: 0;
+}
+@media screen and (max-width:1080px ) {
+  .groupmember::before {
+    border-top: 3px solid#707070;;
+    content: "";
+    display: block;
+    height: 1px;
+    left: 20%;
+    position: absolute;
+    top: 50%;
+    width: 20%;
+    height: 4px;
+    z-index: 0;
+  }
+  .groupmember::after {
+      border-top: 3px solid #707070;;
+      content: "";
+      display: block;
+      height: 1px;
+      right: 20%;
+      position: absolute;
+      top: 50%;
+      width: 20%;
+      height: 4px;
+      z-index: 0;
   }
 }
 </style>

@@ -33,6 +33,8 @@
           <img src="../../img/1024px-Google__G__Logo.svg.png" alt="">
           Google帳號登入
         </button>
+        <br>
+        <br>
       </div>
     </div>
   </div>

@@ -67,10 +67,12 @@ export default {
   margin-top: 15%;
 }
 .prod-grid3{
-  width: 85%;
-  height: 85%;
+  width: 70%;
+  height: 70%;
   align-self: center;
+  padding: 0;
   margin-top: 15%;
+  margin-bottom: -10%;
 }
 .prod-grid4{
   margin-top: 15%;
@@ -91,14 +93,18 @@ export default {
   margin-top: -5%;
 }
 .prod-grid8{
+  width: 70%;
+  height: 70%;
+    align-self: center;
   margin-top: 38%;
-  margin-bottom: 11%;
+  // margin-bottom: 11%;
 }
 .prod-grid9{
-  width: 95%;
-  height: 95%;
+  width: 70%;
+  height: 70%;
   align-self: center;
-  margin-top: 38%;
+  padding-top:38%;
+  // margin-top: 38%;
   margin-bottom: -10%;
 }
 div.card {
@@ -139,15 +145,18 @@ div.card {
   padding: 0 1rem;
   border: 0;
   .thumbnail {
-    display: inline-block;
+    display: flex;
     width: 100%;
+    align-items: center;
   }
   .img-event {
     width: 100%;
     float: left;
     padding: 0 !important;
     margin: 0;
-    height: 20%;
+    margin-top: 5%;
+    height: 50%;
+    width: 20%;
   }
 
   .thumbnail-image {

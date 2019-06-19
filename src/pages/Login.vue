@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="jumbotron jumbotron-bg text-white text-center">
-      <h2 class="display-3">Google News API</h2>
+      <h2 class="display-3">
+        <img src="../img/sweet_time.png" alt="">
+      </h2>
     </div>
     <div class="col-md-6 offset-md-3">
       <h2 class="login-header text-center mb-5 display-4">
@@ -18,6 +20,7 @@
             placeholder="Email"
             required
           >
+          <br>
           <input
             v-model.trim="password"
             type="password"
@@ -30,7 +33,11 @@
       </form>
       <!-- social login -->
       <div class="text-center mt-4">
-        <button @click="loginWithGoogle" class="btn btn-bg btn-lg btn-block">Login with Google</button>
+        <button @click="login" class="btn btn-bg btn-lg btn-block">Login</button>
+        <button @click="loginWithGoogle" class="btn btn-bg-g btn-lg btn-block">
+          <img src="../img/1024px-Google__G__Logo.svg.png" alt="">
+          Login with Google
+        </button>
       </div>
     </div>
   </div>
@@ -68,7 +75,11 @@ export default {
         // set loading to false
         this.loading = false;
       }
+    },
+    login (){
+      router.push("/");
     }
+
   }
 };
 </script>
@@ -79,16 +90,42 @@ export default {
   border-radius: 0;
 }
 
+.jumbotron{
+  height: 300px;
+}
 .jumbotron-bg {
-  background-color: $color-primary;
+  background-color: $color-pink;
 }
 
 .login-header {
   color: $color-primary-dark;
 }
 
+.form-control{
+  border-radius: 5px;
+}
+
 .btn-bg {
   background-color: $color-pink;
   color: $color-white;
+  border-radius: 5px;
+}
+.btn-bg-g {
+  background-color: $color-white;
+  color: $google-red;
+  border: 1px solid $google-red;
+  border-radius: 5px;
+}
+
+button img{
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+}
+
+h2 img{
+  height: 150px;
+  width: auto;
+  margin-top: -50px;
 }
 </style>

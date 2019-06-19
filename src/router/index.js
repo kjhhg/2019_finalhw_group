@@ -1,42 +1,27 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import firebase from "firebase";
 
 import Main from "../pages/Main";
-import Login from "../pages/Login";
-import News16 from "../pages/News16";
+import Login from '../components/auth/Login.vue';
+import ShoppingCart from '../components/ShoppingCart.vue';
+import ProductDetails from '../components/ProductDetails.vue';
+import Notice from '../pages/Notice.vue';
+import Contactus from '../pages/Contactus.vue';
+import Allproducts from '../pages/Allproducts.vue';
+
 
 Vue.use(VueRouter);
 
 export default new VueRouter({
   mode: "history",
   routes: [
-    {
-      path: "*",
-      component: Main,
-      beforeEnter: (to, from, next) => {
-        if (!firebase.auth().currentUser) {
-          next("/login");
-        } else {
-          next();
-        }
-      }
-    },
-    {
-      path: "/login",
-      component: Login
-    },
-    {
-      path: "/news/:id",
-      component: News16,
-      props: true,
-      beforeEnter: (to, from, next) => {
-        if (!firebase.auth().currentUser) {
-          next("/login");
-        } else {
-          next();
-        }
-      }
-    }
+    { path: '*', redirect: '/' },
+    { path: '/', component: Main, name: 'mainpage'},
+    { path: '/product/:id', component: ProductDetails, name: 'product'},
+    { path: '/cart', component: ShoppingCart, name: 'shoppingcart'},
+    { path: '/login', component: Login, name: 'login', onlyGuest: true },
+    { path: '/notice', component: Notice, name: 'notice'},
+    { path: '/contactus', component: Contactus, name: 'contactus'},
+    { path: '/allproducts', component: Allproducts, name: 'allproduct'}
   ]
 });

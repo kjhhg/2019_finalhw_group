@@ -1,9 +1,9 @@
 <template>
    <footer class="footer">
-      <h5 class="footer__description">
+      <h5 class="footer__description1">
          臺北市和平東路二段134號，國立臺北教育大學 數位科技設計學系
       </h5>
-      <h6 class="footer__description">
+      <h6 class="footer__description2">
          &copy; Copyright All rights reserved.
       </h6>
    </footer>   

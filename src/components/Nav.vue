@@ -1,6 +1,8 @@
 <template>
   <nav class="nav">
-    <img src="../img/sweet_time.png" class="nav__logo" alt="">
+    <router-link to="/" style=" grid-column: 2 / 3;">
+      <img src="../img/sweet_time.png" class="nav__logo" alt="">
+    </router-link>
     <input @click="onCheck" type="checkbox" class="nav__checkbox" id="nav-toggle">
     <label for="nav-toggle" class="nav__btn">
       <button :class="`${navIconClr}`"></button>
@@ -8,16 +10,41 @@
     <div id="myNav" :class="`overlay ${myNav}`">
       <div class="overlay-content">
         <img src="../img/sweet_time.png" class="overlay_img">
-        <a href="#">首頁</a>
-        <a href="#">商品總覽</a>
-        <a href="#">購買須知</a>
-        <a href="#">聯絡我們</a>
+        <router-link to="/" tag="li" class="nav-item" active-class="active">
+          <a class="nav-link">首頁</a>
+        </router-link>
+        <router-link to="/allproducts" tag="li" class="nav-item" active-class="active">
+          <a class="nav-link">商品總覽</a>
+        </router-link>
+        <router-link to="/notice" tag="li" class="nav-item" active-class="active">
+          <a class="nav-link">購買須知</a>
+        </router-link>
+        <router-link to="/contactus" tag="li" class="nav-item" active-class="active">
+          <a class="nav-link">聯絡我們</a>
+        </router-link>
+        <router-link to="/login" tag="li" v-if="!isLoggedIn" class="nav-item" active-class="active">
+          <a class="nav-link">登入/註冊</a>
+        </router-link>
+        <li v-if="isLoggedIn" class="li-pointer nav-item">
+          <a @click="logout" class="nav-link">登出 {{ userEmail }}</a>
+        </li>
+        
       </div>
     </div>
+    <li style="grid-column: -2 /-1;  justify-self: flex-start;">
+      <router-link to="/cart" class="btn btn-own btn-block" tag="button">
+        <span class="badge badge-light money">{{ numItems }} ($ {{ cartValue }})</span> 
+        <br>
+        <i class="fa fa-shopping-cart lg-color money"></i>
+      </router-link>
+    </li>
   </nav>
 </template>
 
 <script>
+import {
+  mapActions, mapGetters
+} from 'vuex';
 export default {
   name: "Nav",
   data() {
@@ -28,7 +55,23 @@ export default {
       navIconClr:"nav__icon"
     };
   },
+  computed: {
+    ...mapGetters(['isLoggedIn', 'cartValue', 'currentUser', 'cartItemList']),
+    numItems() {
+      return this.cartItemList.reduce((total, item) => {
+        total += item.quantity;
+        return total
+      }, 0);
+    },
+    userEmail() {
+      return this.isLoggedIn ? this.currentUser.email : ''
+    }
+  },
   methods: {
+    ...mapActions(['logout','loginWithGoogle']),
+    toggleNavbar() {
+      this.isNavOpen = !this.isNavOpen
+    },
     onResize() {
       if (window.innerWidth > 1000) {
         this.size = "sm";
@@ -59,19 +102,17 @@ export default {
 
     onRoute() {
       this.checked = !this.checked;
-    }
+    },
+
+    
   },
 
   created() {
     window.addEventListener("resize", this.onResize);
-    // if (window.innerWidth > 1000) {
-    //   this.size = "lg";
-    //   this.myNav = "hide-lg";
-    // } else {
       this.size = "sm";
       this.myNav = "hide-sm";
-    // }
   }
+  
 };
 </script>
 
@@ -149,5 +190,20 @@ export default {
 }
 
 .overlay-width {
+}
+
+.btn-own{
+  padding: 10px;
+}
+.money{
+  background-color: #FE9287;
+  color: #fff;
+}
+.btn:hover .money{
+  background-color: #fff;
+  color:#FE9287;
+}
+.fa{
+  font-size: 28px;
 }
 </style>

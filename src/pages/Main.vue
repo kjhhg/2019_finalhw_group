@@ -1,33 +1,35 @@
 <template>
   <div class="container-grid">
-    <Nav/>
-    <Gallery :totalNews = 'totalNews' />
-    <SelectedNews :selectedNews = 'selectedNews' />  
-    <Section />
+    <app-header></app-header>
+    <Gallery />
+    <mainPageProduct />
+    <div class="sp"></div>
+    <Aboutus />
+    <Groupmember />
     <Footer />
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex';
-import { mapGetters } from 'vuex';
 
-import Nav from "../components/Nav";
+import Header from '../components/Nav.vue';
+import mainPageProduct from '../components/mainPageStore';
 import Gallery from "../components/Gallery";
-import SelectedNews from "../components/SelectedNews";
-import Section from "../components/Section";
+import Aboutus from "../components/Aboutus";
+import Groupmember from "../components/Groupmember";
 import Footer from "../components/Footer";
 
 export default {
   name: "Main",
   components: {
-    Nav,
+    appHeader: Header,
+    mainPageProduct,
     Gallery,
-    SelectedNews,
-    Section,
+    Aboutus,
+    Groupmember,
     Footer
   },
-  computed: mapGetters(['totalNews', 'selectedNews']),
   methods: mapActions(['init']),
   created() {
     this.init();
@@ -38,5 +40,11 @@ export default {
 <style lang="postcss">
 @import "../styles/base/_variables.css";
 @import "../styles/base/_global.css";
+
+.sp{
+  grid-row: section-start / section-end;
+  grid-column: center-start / center-end;
+  height:10em;
+}
 </style>
 

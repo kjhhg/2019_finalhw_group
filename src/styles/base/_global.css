@@ -34,7 +34,9 @@ a {
     min-content 
     [section-end aboutus-start] 
     min-content 
-    [aboutus-end group-start]
+    [aboutus-end contactus-start]
+    min-content
+    [contactus-end group-start]
     min-content
     [group-end footer-start] 
     min-content

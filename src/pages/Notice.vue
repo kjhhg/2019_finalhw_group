@@ -2,7 +2,7 @@
   <div class="container-grid">
     <Nav/>
     <div class="section">
-      <div class="notice">購買須知</div>
+      <h2 class="notice">購買須知</h2>
       <div class="main">
         蛋糕宅配服務<br>
         
@@ -107,7 +107,7 @@ export default {
 
 .notice{
   font-family: '微軟正黑體';
-  font-size: 30px;
+  /* font-size: 30px; */
   font-weight: bold;
   color: #707070;
   display: grid;
@@ -115,6 +115,7 @@ export default {
   grid-column: center-start / center-end;
   align-self: flex-end;
   justify-self: center;
+  position: relative;
 }
 .main{
   font-family: '微軟正黑體';
@@ -161,10 +162,10 @@ export default {
     content: "";
     display: block;
     height: 1px;
-    left: 22%;
+    left: 120%;
     position: absolute;
-    top: 26%;
-    width: 22%;
+    top: 50%;
+    width: 120%;
     height: 4px;
     z-index: 0;
 }
@@ -173,10 +174,10 @@ export default {
     content: "";
     display: block;
     height: 1px;
-    right: 22%;
+    right: 120%;
     position: absolute;
-    top: 26%;
-    width: 22%;
+    top: 50%;
+    width: 120%;
     height: 4px;
     z-index: 0;
 }

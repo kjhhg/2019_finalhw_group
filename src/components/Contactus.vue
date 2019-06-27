@@ -33,10 +33,10 @@ export default {
   //   Footer
   // },
   // computed: mapGetters(['totalNews', 'selectedNews']),
-  methods: mapActions(['init']),
-  created() {
-    this.init();
-  }
+  // methods: mapActions(['init']),
+  // created() {
+  //   this.init();
+  // }
 };
 </script>
 
@@ -60,7 +60,7 @@ input{
 
 .section{
   display: grid;
-  grid-row: gallery-start / footer-strat;
+  grid-row: nav-start / footer-strat;
   grid-column: full-start / full-end;
   grid-template-rows: 
   [cu-start]

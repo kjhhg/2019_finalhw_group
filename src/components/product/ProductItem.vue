@@ -12,8 +12,8 @@
       <div class="row">
         <p class="col-6 lead grey-text">${{ item.price }}</p>
         <p class="col-6">
-          <button class="btn lg-color pull-right" :disabled="item.quantity === 0" @click="addItem">
-            加入購物車
+          <button class="btn lg-color pull-right btn_center" :disabled="item.quantity === 0" @click="addItem">
+            加入<br>購物車
           </button>
         </p>
       </div>
@@ -169,7 +169,6 @@ div.card {
     margin: 0;
   }
 
- 
 
   @media (max-width: 767.98px) {
     .img-event {

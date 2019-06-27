@@ -1,7 +1,7 @@
 <template>
   <div class="container-grid">
     <Nav/>
-    <div class="section">
+    <div class="section-notice">
       <h2 class="notice">購買須知</h2>
       <div class="main">
         蛋糕宅配服務<br>
@@ -73,7 +73,7 @@ export default {
 @import "../styles/base/_variables.css";
 @import "../styles/base/_global.css";
 
-.section {
+.section-notice {
   background-color:#FFD9C4;
   display: grid;
   grid-row: nav-start / group-end;
@@ -81,10 +81,10 @@ export default {
   
   grid-template-rows:
   [section-start]
-  30px
-  [title-start]
-  minmax(8rem,1fr)
-  [title-end main-start] 
+  150px
+  [nottitle-start]
+  min-content
+  [nottitle-end main-start] 
   min-content
   [main-end div-start] 
   repeat(6, min-content)
@@ -111,9 +111,9 @@ export default {
   font-weight: bold;
   color: #707070;
   display: grid;
-  grid-row: title-start / title-end;
+  grid-row: nottitle-start / nottitle-end;
   grid-column: center-start / center-end;
-  align-self: flex-end;
+  align-self: center;
   justify-self: center;
   position: relative;
 }
@@ -127,7 +127,7 @@ export default {
   grid-column: center-start / center-end;
   align-self: center;
   justify-self: center;
-  text-align: flex-start;
+  /* text-align: flex-start; */
 }
 
 .pay{

@@ -5,7 +5,7 @@
     <mainPageProduct />
     <div class="sp"></div>
     <Aboutus />
-    <Contactus />
+    <!-- <Contactus /> -->
     <Groupmember />
     <Footer />
   </div>
@@ -20,7 +20,7 @@ import Gallery from "../components/Gallery";
 import Aboutus from "../components/Aboutus";
 import Groupmember from "../components/Groupmember";
 import Footer from "../components/Footer";
-import Contactus from "../components/Contactus";
+// import Contactus from "../components/Contactus";
 
 export default {
   name: "Main",
@@ -29,7 +29,7 @@ export default {
     mainPageProduct,
     Gallery,
     Aboutus,
-    Contactus,
+    // Contactus,
     Groupmember,
     Footer
   },

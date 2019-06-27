@@ -1,6 +1,6 @@
 <template>
   <section class="section">
-    <div class="aboutus">關於我們</div>
+    <h2 class="aboutus">關於我們</h2>
     <p class="titleword">
       一群因為甜點而聚在一起的人們，創立了Sweet Time這個品牌<br>
       為了造福更多熱愛甜點的朋友們<br>
@@ -105,7 +105,7 @@ section{
 
 .aboutus{
   font-family: '微軟正黑體';
-  font-size: 30px;
+  /* font-size: 30px; */
   font-weight: bold;
   color: #707070;
   display: grid;

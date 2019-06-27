@@ -1,6 +1,6 @@
 <template>
   <section class="section">
-    <div class="groupmember">團隊成員</div>
+    <h2 class="groupmember">團隊成員</h2>
     <img class="groupmember--picture1" src="../img/hsuan.jpg" alt="">
     <p class="groupmember--decr1">
       Project Planning <br>
@@ -82,7 +82,7 @@ export default {
 
 .groupmember{
   font-family: '微軟正黑體';
-  font-size: 30px;
+  /* font-size: 30px; */
   font-weight: bold;
   color: #707070;
   display: grid;
@@ -161,10 +161,10 @@ export default {
     content: "";
     display: block;
     height: 1px;
-    left: 22%;
+    left: 120%;
     position: absolute;
     top: 50%;
-    width: 22%;
+    width: 120%;
     height: 4px;
     z-index: 0;
 }
@@ -173,10 +173,10 @@ export default {
     content: "";
     display: block;
     height: 1px;
-    right: 22%;
+    right: 120%;
     position: absolute;
     top: 50%;
-    width: 22%;
+    width: 120%;
     height: 4px;
     z-index: 0;
 }
@@ -186,10 +186,10 @@ export default {
     content: "";
     display: block;
     height: 1px;
-    left: 20%;
+    left: 110%;
     position: absolute;
     top: 50%;
-    width: 20%;
+    width: 100%;
     height: 4px;
     z-index: 0;
   }
@@ -198,10 +198,10 @@ export default {
       content: "";
       display: block;
       height: 1px;
-      right: 20%;
+      right: 110%;
       position: absolute;
       top: 50%;
-      width: 20%;
+      width: 100%;
       height: 4px;
       z-index: 0;
   }
